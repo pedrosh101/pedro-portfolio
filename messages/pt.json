@@ -2,5 +2,10 @@
   "HomePage": {
     "title": "olá alê",
     "about": "Essa é a page"
+  },
+  "nav": {
+    "ilu": "Ilustrações",
+    "charc": "Design de Personagens",
+    "sob": "Sobre"
   }
 }
