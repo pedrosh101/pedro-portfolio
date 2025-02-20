@@ -9,53 +9,90 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Coffee, Instagram, Mail } from "lucide-react";
-import demo from "../../public/work/demo.jpg"
+import { Coffee, Instagram, Mail, Menu } from "lucide-react";
+import logo from "../../public/logo.png";
+import { useTranslations } from "next-intl";
+import LocalSwitcher from "./LanguageSwitcher";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPinterest } from "@fortawesome/free-brands-svg-icons";
 
 export default function Navbar() {
+  const t = useTranslations("nav");
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className="flex items-center justify-between p-4 bg-white">
+    <nav className="flex items-center justify-between p-8 bg-white mx-28 font-consola">
       {/* Logo */}
       <div className="flex items-center">
-        <Image
-          src={demo}
-          alt="Logo"
-          width={50}
-          height={50}
-        />
+        <Image src={logo} alt="Logo" width={200} height={200} />
       </div>
 
+      {/* Mobile Menu Button */}
+      <button
+        className="md:hidden"
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label="Menu"
+      >
+        <Menu size={28} color="#895a2c" />
+      </button>
+
       {/* Menu */}
-      <div className="flex space-x-6 items-end text-clr1">
+      <div
+        className={`${
+          isOpen ? "flex" : "hidden"
+        } md:flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 items-center text-black absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent p-4 md:p-0 z-10 shadow md:shadow-none`}
+      >
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" >Portfolio</Button>
+            <Button variant="ghost" className="hover:text-clr1">portfolio</Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuItem >
-              <Link href="/portfolio/illustration" className="text-clr1">Illustration</Link>
+            <DropdownMenuItem>
+              <Link href="/portfolio/illustration" className="hover:text-clr1">
+                <span>{t("ilu")}</span>
+              </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href="/portfolio/comics" className="text-clr1">Comics</Link>
+              <Link href="/portfolio/comics" className="hover:text-clr1">comics</Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href="/portfolio/character-design" className="text-clr1">Character Design</Link>
+              <Link href="/portfolio/character-design" className="hover:text-clr1">
+                <span>{t("charc")}</span>
+              </Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        
+
         <Link href="/about">
-          <Button variant="ghost">About</Button>
+          <Button variant="ghost">
+            <span className="hover:text-clr1">{t("sob")}</span>
+          </Button>
         </Link>
-        <Link href="/newsletter">
-          <Button variant="ghost">Newsletter</Button>
+
+        <Link href="https://lettersfromthehauntedforest.substack.com/" target="_blank">
+          <Button variant="ghost" className="hover:text-clr1">newsletter</Button>
         </Link>
+
         <Link href="/shop">
-          <Button variant="ghost">Shop</Button>
+          <Button variant="ghost" className="hover:text-clr1">shop</Button>
         </Link>
-        <Instagram color="#895a2c"/>
-        <Mail color="#895a2c"/>
-        <Coffee color="#895a2c" />
+
+        {/* Ícones sociais */}
+        <div className="flex space-x-4">
+          <Link href="https://instagram.com/allyribeiroart" target="_blank">
+            <Instagram color="#895a2c" size={24} />
+          </Link>
+          <Link href="https://lettersfromthehauntedforest.substack.com/" target="_blank">
+            <FontAwesomeIcon icon={faPinterest} size="lg" color="#895a2c" />
+          </Link>
+          <Link href="mailto:seuemail@example.com">
+            <Mail color="#895a2c" size={24} />
+          </Link>
+          <Coffee color="#895a2c" size={24} />
+        </div>
+
+        <LocalSwitcher />
       </div>
     </nav>
   );

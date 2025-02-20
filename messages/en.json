@@ -4,8 +4,8 @@
     "about": "Go to the about page"
   },
   "nav": {
-    "ilu": "Ilustration",
-    "charc": "Character Design",
-    "sob": "About"
+    "ilu": "ilustration",
+    "charc": "character design",
+    "sob": "about"
   }
 }
