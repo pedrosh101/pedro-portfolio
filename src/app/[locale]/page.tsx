@@ -1,11 +1,8 @@
-import { useTranslations } from "next-intl";
-
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import demo from "../../../public/work/demo.jpg";
 
 export default function HomePage() {
-  const t = useTranslations("HomePage");
   return (
     <>
       <Navbar />
