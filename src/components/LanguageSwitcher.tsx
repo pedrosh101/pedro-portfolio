@@ -20,9 +20,9 @@ export default function LocalSwitcher() {
     <button
       onClick={toggleLocale}
       disabled={isPending}
-      className="bg-transparent border-none cursor-pointer text-lg text-clr1 font-medium"
+      className="bg-transparent border-none cursor-pointer text-xl tracking-wider text-clr1 font-medium font-imfell"
     >
-      {localeActive === 'en' ? 'EN/PT' : 'PT/EN'}
+      {localeActive === 'en' ? 'en/pt' : 'pt/en'}
     </button>
   );
 }

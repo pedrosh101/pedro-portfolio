@@ -9,13 +9,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Coffee, Instagram, Mail, Menu } from "lucide-react";
+import { Instagram, Mail, Menu } from "lucide-react";
 import logo from "../../public/logo.png";
 import { useTranslations } from "next-intl";
 import LocalSwitcher from "./LanguageSwitcher";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPinterest } from "@fortawesome/free-brands-svg-icons";
+import kofi from "../../public/kofi.png"
 
 export default function Navbar() {
   const t = useTranslations("nav");
@@ -25,7 +26,9 @@ export default function Navbar() {
     <nav className="flex items-center justify-between p-8 bg-white mx-28 font-consola">
       {/* Logo */}
       <div className="flex items-center">
+        <Link href="/">
         <Image src={logo} alt="Logo" width={200} height={200} />
+        </Link>
       </div>
 
       {/* Mobile Menu Button */}
@@ -45,7 +48,9 @@ export default function Navbar() {
       >
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="hover:text-clr1">portfolio</Button>
+            <Button variant="ghost" className="hover:text-clr1">
+              portfolio
+            </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
             <DropdownMenuItem>
@@ -54,42 +59,62 @@ export default function Navbar() {
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href="/portfolio/comics" className="hover:text-clr1">comics</Link>
+              <Link href="/portfolio/comics" className="hover:text-clr1">
+                comics
+              </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href="/portfolio/character-design" className="hover:text-clr1">
+              <Link
+                href="/portfolio/character-design"
+                className="hover:text-clr1"
+              >
                 <span>{t("charc")}</span>
               </Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
 
-        <Link href="/about">
+        <Link href="/pt/about">
           <Button variant="ghost">
             <span className="hover:text-clr1">{t("sob")}</span>
           </Button>
         </Link>
 
-        <Link href="https://lettersfromthehauntedforest.substack.com/" target="_blank">
-          <Button variant="ghost" className="hover:text-clr1">newsletter</Button>
+        <Link
+          href="https://lettersfromthehauntedforest.substack.com/"
+          target="_blank"
+        >
+          <Button variant="ghost" className="hover:text-clr1">
+            newsletter
+          </Button>
         </Link>
 
-        <Link href="/shop">
-          <Button variant="ghost" className="hover:text-clr1">shop</Button>
+        <Link
+          href="https://mailchi.mp/d4a1e101dd11/studiovulpes"
+          target="_blank"
+        >
+          <Button variant="ghost" className="hover:text-clr1">
+            shop
+          </Button>
         </Link>
 
         {/* Ícones sociais */}
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 pl-4">
           <Link href="https://instagram.com/allyribeiroart" target="_blank">
             <Instagram color="#895a2c" size={24} />
           </Link>
-          <Link href="https://lettersfromthehauntedforest.substack.com/" target="_blank">
+          <Link
+            href="https://lettersfromthehauntedforest.substack.com/"
+            target="_blank"
+          >
             <FontAwesomeIcon icon={faPinterest} size="lg" color="#895a2c" />
           </Link>
           <Link href="mailto:seuemail@example.com">
             <Mail color="#895a2c" size={24} />
           </Link>
-          <Coffee color="#895a2c" size={24} />
+          <Link href="https://ko-fi.com/allyribeiro" target="_blank">
+            <Image src={kofi} alt="kofi" width={24} height={24} />
+          </Link>
         </div>
 
         <LocalSwitcher />

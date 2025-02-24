@@ -68,3 +68,7 @@
   font-family: "consola";
   src: url("../../../public/fonts/CONSOLA.TTF");
 }
+@font-face {
+  font-family: "imfell";
+  src: url("../../../public/fonts/IMFellEnglish-Italic.ttf");
+}

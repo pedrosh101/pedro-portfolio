@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import demo from "../../../public/work/demo.jpg";
+import Footer from "@/components/Footer";
 
 export default function HomePage() {
   return (
@@ -20,6 +21,7 @@ export default function HomePage() {
           />
         ))}
       </div>
+      <Footer />
     </>
   );
 }

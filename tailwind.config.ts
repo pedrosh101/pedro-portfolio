@@ -54,6 +54,7 @@ export default {
       },
 	  fontFamily: {
 		consola: "consola",
+    imfell: "imfell"
 	  },
       borderRadius: {
         lg: "var(--radius)",
