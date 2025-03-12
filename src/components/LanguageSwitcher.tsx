@@ -1,18 +1,20 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from '@/i18n/routing';
 import { useTransition } from 'react';
 
 export default function LocalSwitcher() {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
+  const pathname = usePathname();
   const localeActive = useLocale();
 
   const toggleLocale = () => {
     const nextLocale = localeActive === 'en' ? 'pt' : 'en';
+    
     startTransition(() => {
-      router.replace(`/${nextLocale}`);
+      router.replace(pathname, { locale: nextLocale });
     });
   };
 

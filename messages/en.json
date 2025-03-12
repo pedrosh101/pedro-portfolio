@@ -7,5 +7,10 @@
     "ilu": "ilustration",
     "charc": "character design",
     "sob": "about"
+  },
+  "about": {
+    "hi": "Hi! My name is Ally",
+    "touch": "get in touch",
+    "ig": "meanwhile on instagram"
   }
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from '@/i18n/routing';
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
@@ -74,7 +74,7 @@ export default function Navbar() {
           </DropdownMenuContent>
         </DropdownMenu>
 
-        <Link href="/pt/about">
+        <Link href="/about">
           <Button variant="ghost">
             <span className="hover:text-clr1">{t("sob")}</span>
           </Button>
