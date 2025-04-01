@@ -12,23 +12,17 @@ function MainContent() {
   const [active, setActive] = useState<"projects" | "about">("projects");
   const [isMobile, setIsMobile] = useState(false);
 
-  // Detectar se é mobile baseado na largura da tela
+
   useEffect(() => {
     const checkIfMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
-    // Verificar inicialmente
     checkIfMobile();
-    
-    // Adicionar listener para redimensionamento
     window.addEventListener("resize", checkIfMobile);
-    
-    // Cleanup
     return () => window.removeEventListener("resize", checkIfMobile);
   }, []);
 
-  // Versão Desktop (original, sem alterações)
+  // desktop
   if (!isMobile) {
     return (
       <div className="relative flex w-full h-full">
@@ -102,12 +96,12 @@ function MainContent() {
     );
   }
 
-  // Versão Mobile - Layout vertical com "Sobre" em cima e "Projetos" embaixo
+  // mobile
   return (
     <div className="flex flex-col w-full">
       {/* Sobre section em cima */}
       <div className="w-full bg-clr4 p-6">
-        <div className="text-lg font-font3">
+        <div className="text-lg font-font3 pb-3">
           <h1 className="font-font1 text-3xl mb-4">{t("about")}</h1>
           <p>{t("me1")}</p>
           <p className="my-2">{t("me3")}</p>
@@ -140,7 +134,7 @@ function MainContent() {
 
       {/* Projetos section embaixo */}
       <div className="w-full bg-clr2 text-clr4 border-t-4 border-black p-6">
-        <h1 className="font-font1 text-3xl mb-4">{t("proj")}</h1>
+        <h1 className="font-font1 text-3xl mb-4 pt-4">{t("proj")}</h1>
         <div className="grid grid-cols-1 gap-6 mt-4 font-font3">
           {sites[locale]?.map((site) => (
             <ProjectCard
