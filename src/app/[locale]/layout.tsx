@@ -7,8 +7,8 @@ import {routing} from '@/i18n/routing';
  
 
 export const metadata: Metadata = {
-  title: "Site da Ally",
-  description: "Illustrations",
+  title: "Pedro - Portfolio",
+  description: "portfolio",
 };
 
 export default async function LocaleLayout({

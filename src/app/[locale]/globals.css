@@ -65,10 +65,14 @@
   }
 }
 @font-face {
-  font-family: "consola";
-  src: url("../../../public/fonts/CONSOLA.TTF");
+  font-family: "font2";
+  src: url("../../../public/fonts/font2.ttf");
 }
 @font-face {
-  font-family: "imfell";
-  src: url("../../../public/fonts/IMFellEnglish-Italic.ttf");
+  font-family: "font1";
+  src: url("../../../public/fonts/font1.ttf");
+}
+@font-face {
+  font-family: "font3";
+  src: url("../../../public/fonts/font3.otf");
 }

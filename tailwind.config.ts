@@ -10,7 +10,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        clr1: "#895a2c",
+        clr1: "#E07D4F",
+        clr2: "#262529",
+        clr3: "#ff4b2c",
+        clr4: "#eedfd8",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -53,8 +56,9 @@ export default {
         },
       },
 	  fontFamily: {
-		consola: "consola",
-    imfell: "imfell"
+		font2: "font2",
+    font1: "font1",
+    font3: "font3"
 	  },
       borderRadius: {
         lg: "var(--radius)",

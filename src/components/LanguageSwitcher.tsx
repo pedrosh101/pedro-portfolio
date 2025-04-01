@@ -1,8 +1,9 @@
-'use client';
+"use client";
 
-import { useLocale } from 'next-intl';
-import { usePathname, useRouter } from '@/i18n/routing';
-import { useTransition } from 'react';
+import { useLocale } from "next-intl";
+import { usePathname, useRouter } from "@/i18n/routing";
+import { useTransition } from "react";
+import { BR, GB } from "country-flag-icons/react/3x2";
 
 export default function LocalSwitcher() {
   const [isPending, startTransition] = useTransition();
@@ -11,8 +12,8 @@ export default function LocalSwitcher() {
   const localeActive = useLocale();
 
   const toggleLocale = () => {
-    const nextLocale = localeActive === 'en' ? 'pt' : 'en';
-    
+    const nextLocale = localeActive === "en" ? "pt" : "en";
+
     startTransition(() => {
       router.replace(pathname, { locale: nextLocale });
     });
@@ -22,9 +23,19 @@ export default function LocalSwitcher() {
     <button
       onClick={toggleLocale}
       disabled={isPending}
-      className="bg-transparent border-none cursor-pointer text-xl tracking-wider text-clr1 font-medium font-imfell"
+      className="flex justify-end w-full bg-transparent border-none cursor-pointer text-xl tracking-wider lg:mr-16 mr-4 text-black font-medium font-imfell gap-2"
     >
-      {localeActive === 'en' ? 'en/pt' : 'pt/en'}
+      {localeActive === "en" ? (
+        <>
+          <p>Português</p>
+          <BR title="United States" className="w-5" />
+        </>
+      ) : (
+        <>
+          <p>English</p>
+          <GB title="United States" className="w-5" />
+        </>
+      )}
     </button>
   );
 }

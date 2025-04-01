@@ -1,16 +1,15 @@
 {
   "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
-  },
-  "nav": {
-    "ilu": "ilustration",
-    "charc": "character design",
-    "sob": "about"
-  },
-  "about": {
-    "hi": "Hi! My name is Ally",
-    "touch": "get in touch",
-    "ig": "meanwhile on instagram"
+    "proj": "PROJECTS",
+    "about": "ABOUT",
+    "me1": "Hello, my name is Pedro. I'm a programmer and web designer.",
+    "me2": "",
+    "me3": "The vast majority of websites and web apps I have developed were in partnership with agencies. There have been more than 50 projects over the years, from e-commerce to institutional websites, for the most diverse clients.",
+    "me4": "In the Projects tab, I have separated some that I did independently, directly with clients.",
+    "code": "Check out the project codes here.",
+    "cv": "If you want to know a little more about my career and the technologies I use as a developer, you can download my ",
+    "cv2": "resume",
+    "cv3": " or check out my ",
+    "visit": "Visit"
   }
 }

@@ -1,27 +1,27 @@
-import Image from "next/image";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import React from "react";
+import { useTranslations } from "next-intl";
+
 
 interface ProjectCardProps {
-  id: number;
   title: string;
-  caminho: string;
   texto: string;
+  caminho: string;
 }
 
-function ProjectCard({ id, title, caminho }: ProjectCardProps) {
-  const localeActive = useLocale();
+function ProjectCard({ title, texto, caminho }: ProjectCardProps) {
+    const t = useTranslations("HomePage");
+
+
 
   return (
-    <Link href={`/${localeActive}/portfolio/il/${id}`} className="flex flex-col items-center text-center">
-      <Image
-        src={caminho}
-        alt={title}
-        width={400}
-        height={400}
-        className="object-cover"
-      />
-    </Link>
+    <div className="text-clr4">
+      <h1 className="text-xl font-font3">{title}</h1>
+      <p className="text-base mt-1">{texto}</p>
+      <Link href={caminho} target="_blank" className="flex w-fit">
+        <p className="mt-2 text-clr4 hover:text-clr1  italic rounded-sm">{t("visit")}</p>
+      </Link>
+    </div>
   );
 }
 

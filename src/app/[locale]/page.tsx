@@ -1,27 +1,24 @@
+import MainContent from "@/components/MainContent";
 import Navbar from "@/components/Navbar";
-import ProjectCard from "@/components/ProjectCard";
-import Footer from "@/components/Footer";
-import { illustrations } from "@/app/data/il";
 
 export default function HomePage() {
   return (
     <>
-      <Navbar />
+      <div className="lg:min-h-screen overflow-hidden flex flex-col">
+        <Navbar />
 
-      <h1>Teste21</h1>
-      <div className="grid grid-cols-3 gap-4 p-4 mx-24">
-        {illustrations.map((project) => (
-          <ProjectCard
-            key={project.id}
-            id={project.id}
-            title={project.title}
-            caminho={project.caminho}
-            texto={project.texto}
-          />
-        ))}
+        <div className="flex flex-1">
+          <div className="bg-clr1 border-r-4 border-black p-5 lg:p-4 lg:w-20"></div>
+
+          <div className="flex-1 z-10">
+            <MainContent />
+          </div>
+
+          <div className="bg-clr1 border-l-4 border-black p-5 lg:p-4 lg:w-20"></div>
+        </div>
+        {/* moldura bottom */}
+        <div className="bg-clr1 border-t-4 border-black w-full z-50 p-5 lg:p-4 lg:h-16"></div>
       </div>
-
-      <Footer />
     </>
   );
 }
