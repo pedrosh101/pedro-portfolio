@@ -23,7 +23,7 @@ export default function LocalSwitcher() {
     <button
       onClick={toggleLocale}
       disabled={isPending}
-      className="flex justify-end w-full bg-transparent border-none cursor-pointer text-xl tracking-wider lg:mr-16 mr-4 text-black font-medium font-imfell gap-2"
+      className="flex justify-end w-fit bg-transparent border-none cursor-pointer text-xl tracking-wider lg:mr-16 mr-4 text-black font-medium font-imfell gap-2"
     >
       {localeActive === "en" ? (
         <>

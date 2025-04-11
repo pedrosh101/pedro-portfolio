@@ -15,7 +15,7 @@ function MainContent() {
 
   useEffect(() => {
     const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 1050);
     };
     checkIfMobile();
     window.addEventListener("resize", checkIfMobile);
@@ -27,13 +27,13 @@ function MainContent() {
     return (
       <div className="relative flex w-full h-full">
         {/* Sobre */}
-        <div className="w-10/12 h-full bg-clr4 flex flex-col p-8 text-2xl transition-all duration-1000 ease-in-out">
-          <div className="absolute top-0 left-0 lg:w-6/12 h-full p-8 text-xl font-font3">
-            <h1 className="font-font1 text-4xl mb-4">{t("about")}</h1>
+        <div className="w-10/12 h-full bg-clr4 flex flex-col text-2xl duration-1000 ease-in-out">
+          <div className="absolute top-0 left-0 lg:w-8/12 h-full p-6 2xl:text-xl text-lg font-font3">
+            <h1 className="font-font1 2xl:text-4xl md:text-3xl mb-4">{t("about")}</h1>
             <p>{t("me1")}</p>
             <p className="my-2">{t("me3")}</p>
             <p>{t("me4")}</p>
-            <h1 className="font-font1 text-4xl mb-4 mt-16">CV</h1>
+            <h1 className="font-font1 2xl:text-4xl md:text-3xl mb-4 mt-16">CV</h1>
             <p>
               {t("cv")}{" "}
               <a
@@ -60,15 +60,15 @@ function MainContent() {
         </div>
         {/* Projetos */}
         <div
-          className={`absolute top-0 right-0 h-full p-8 overflow-hidden transition-all duration-1000 ease-in-out bg-clr2 text-clr4 border-l-4 border-black ${
+          className={`absolute top-0 right-0 h-full p-6 overflow-hidden transition-all duration-1000 ease-in-out bg-clr2 text-clr4 border-l-4 border-black ${
             active === "about" ? "w-10/12" : "w-2/12"
           }`}
           onMouseEnter={() => setActive("about")}
           onMouseLeave={() => setActive("projects")}
         >
-          <h1 className="font-font1 text-4xl">{t("proj")}</h1>
+          <h1 className="font-font1 2xl:text-4xl md:text-3xl">{t("proj")}</h1>
           <div
-            className={`grid grid-cols-2 gap-8 mt-4 font-font3 ${
+            className={`grid grid-cols-2 2xl:gap-8 gap-5 mt-4 font-font3 ${
               active === "about" ? "block" : "hidden"
             }`}
           >
@@ -134,7 +134,7 @@ function MainContent() {
 
       {/* Projetos section embaixo */}
       <div className="w-full bg-clr2 text-clr4 border-t-4 border-black p-6">
-        <h1 className="font-font1 text-3xl mb-4 pt-4">{t("proj")}</h1>
+        <h1 className="font-font1 text-3xl mb-6 pt-4">{t("proj")}</h1>
         <div className="grid grid-cols-1 gap-6 mt-4 font-font3">
           {sites[locale]?.map((site) => (
             <ProjectCard
