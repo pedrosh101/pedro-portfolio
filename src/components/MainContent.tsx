@@ -19,7 +19,7 @@ function MainContent() {
       const checkIfMobile = () => {
         setIsMobile(window.innerWidth < 1050);
       };
-  
+
       checkIfMobile();
       window.addEventListener("resize", checkIfMobile);
       return () => window.removeEventListener("resize", checkIfMobile);
@@ -40,11 +40,14 @@ function MainContent() {
             <p className="my-2">{t("me3")}</p>
             <p>{t("me4")}</p>
             <h1 className="font-font1 2xl:text-4xl md:text-3xl mb-4 mt-6 2xl:mt-12">
-            {t("me5")}
+              {t("me5")}
             </h1>
-           <p>{t("cv")}</p>
-           <p className="my-2">HTML, CSS, JavaScript, React.js, Next.js, TypeScript, Tailwind CSS & Wordpress.</p>
-           <p>{t("cv3")}</p>
+            <p>{t("cv")}</p>
+            <p className="my-2">
+              HTML, CSS, JavaScript, React.js, Next.js, TypeScript, Tailwind CSS
+              & Wordpress.
+            </p>
+            <p>{t("cv3")}</p>
           </div>
         </div>
         {/* Projetos */}
@@ -89,9 +92,7 @@ function MainContent() {
           onMouseLeave={() => setActiveLinkTab(false)}
         >
           <div className="p-6">
-            <h1 className="font-font1 2xl:text-4xl md:text-3xl">
-            LINKS
-            </h1>
+            <h1 className="font-font1 2xl:text-4xl md:text-3xl">LINKS</h1>
             {activeLinkTab && (
               <ul className="mt-4 font-font3 space-y-2 text-lg ">
                 <li>
@@ -121,19 +122,18 @@ function MainContent() {
                   </a>
                 </li>
                 <li>
-                <a
-                href={
-                  locale === "en"
-                    ? "/CV.pdf"
-                    : "/Currículo - Pedro Henrique Lima.pdf"
-                }
-                download
-                className="underline hover:text-clr2"
-              >
-                {t("cv2")}
-              </a>
+                  <a
+                    href={
+                      locale === "en"
+                        ? "/CV.pdf"
+                        : "/Currículo - Pedro Henrique Lima.pdf"
+                    }
+                    download
+                    className="underline hover:text-clr2"
+                  >
+                    {t("cv2")}
+                  </a>
                 </li>
-  
               </ul>
             )}
           </div>
@@ -148,40 +148,24 @@ function MainContent() {
       {/* Sobre section em cima */}
       <div className="w-full bg-white p-6">
         <div className="text-lg font-font3 pb-3">
-          <h1 className="font-font1 text-3xl mb-4">{t("about")}</h1>
+          <h1 className="font-font1 text-3xl py-2">{t("about")}</h1>
           <p>{t("me1")}</p>
           <p className="my-2">{t("me3")}</p>
           <p>{t("me4")}</p>
-          <h1 className="font-font1 text-3xl mb-4 mt-10">CV</h1>
-          <p>
-            {t("cv")}{" "}
-            <a
-              href={
-                locale === "en"
-                  ? "/CV.pdf"
-                  : "/Currículo - Pedro Henrique Lima.pdf"
-              }
-              download
-              className="underline font-font3 hover:text-clr1"
-            >
-              {t("cv2")}
-            </a>
-            {t("cv3")}{" "}
-            <Link
-              href="https://www.linkedin.com/in/pedrohenriquedasilvalima/"
-              target="_blank"
-              className="underline font-font3 hover:text-clr1"
-            >
-              Linkedin.
-            </Link>
+          <h1 className="font-font1 text-3xl mb-4 mt-10">{t("me5")}</h1>
+          <p>{t("cv")}</p>
+          <p className="my-2">
+            HTML, CSS, JavaScript, React.js, Next.js, TypeScript, Tailwind CSS &
+            Wordpress.
           </p>
+          <p>{t("cv3")}</p>
         </div>
       </div>
 
-      {/* Projetos section embaixo */}
+      {/* Projetos  */}
       <div className="w-full bg-clr3 text-white border-t-4 border-black p-6">
         <h1 className="font-font1 text-3xl mb-6 pt-4">{t("proj")}</h1>
-        <div className="grid grid-cols-1 gap-6 mt-4 font-font3">
+        <div className="grid grid-cols-1 gap-6 mt-2 font-font3">
           {sites[locale]?.map((site) => (
             <ProjectCard
               key={site.id}
@@ -201,6 +185,53 @@ function MainContent() {
             <p className="text-sm mt-1">{t("code")}</p>
           </Link>
         </div>
+      </div>
+
+      {/* links */}
+      <div className="w-full bg-clr2 text-black border-t-4 border-black p-6">
+        <h1 className="font-font1 text-3xl py-2">LINKS</h1>
+
+        <ul className="mt-4 font-font3 space-y-2 text-lg ">
+          <li>
+            <a
+              href="https://linkedin.com/in/pedrohenriquedasilvalima"
+              target="_blank"
+              className="underline"
+            >
+              Linkedin
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/pedrosh101"
+              target="_blank"
+              className="underline"
+            >
+              Github
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:pedro.sh101@gmail.com"
+              className="underline"
+            >
+              Email
+            </a>
+          </li>
+          <li>
+            <a
+              href={
+                locale === "en"
+                  ? "/CV.pdf"
+                  : "/Currículo - Pedro Henrique Lima.pdf"
+              }
+              download
+              className="underline"
+            >
+              {t("cv2")}
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   );
