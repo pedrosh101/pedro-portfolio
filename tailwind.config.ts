@@ -10,10 +10,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        clr1: "#E07D4F",
-        clr2: "#262529",
-        clr3: "#ff4b2c",
-        clr4: "#eedfd8",
+        clr1: "#e22e2d",
+        clr2: "#f0c12e",
+        clr3: "#3f7da2",
+        clr4: "#e1d1af",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
