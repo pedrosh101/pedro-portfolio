@@ -222,7 +222,7 @@ function MainContent() {
             <a
               href={
                 locale === "en"
-                  ? "/CV.pdf"
+                  ? "/CV - Pedro Henrique.pdf"
                   : "/Currículo - Pedro Henrique Lima.pdf"
               }
               download
