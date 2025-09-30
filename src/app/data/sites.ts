@@ -9,7 +9,7 @@ export const sites = {
     {
       id: 2,
       title: "Art Of Mala",
-      caminho: "https://artofmala.com/",
+      caminho: "https://artofmala.netlify.app/",
       texto: "Multidisciplinary artist with a degree in Visual Arts from the University of Algarve (UALG). The project takes a minimalist approach, focusing on the artist's works.",
     },
     {
@@ -26,8 +26,8 @@ export const sites = {
     },
     {
       id: 5,
-      title: "Ally Ribeiro (under construction)",
-      caminho: "https://allyribeiroart.netlify.app/",
+      title: "Ally Ribeiro",
+      caminho: "https://allyribeiro.com/",
       texto: "Brazilian illustrator whose work is strongly inspired by the natural world, folklore, and literature. The project was drawed by the artist and recreated in code.",
     },
   ],
@@ -41,7 +41,7 @@ export const sites = {
     {
       id: 2,
       title: "Art Of Mala",
-      caminho: "https://artofmala.com/",
+      caminho: "https://artofmala.netlify.app/",
       texto: "Artista multidisciplinar licenciado em Artes Visuais pela Universidade do Algarve (UALG). O projeto possui uma abordagem minimalista, com o foco nas obras do artista.",
     },
     {
@@ -58,8 +58,8 @@ export const sites = {
     },
     {
       id: 5,
-      title: "Ally Ribeiro (em construção)",
-      caminho: "https://allyribeiroart.netlify.app/",
+      title: "Ally Ribeiro",
+      caminho: "https://allyribeiro.com/",
       texto: "Ilustradora brasileira cujo trabalho é fortemente inspirado pelo mundo natural, folclore e literatura. O projeto foi desenhado pela artista e recriado em código.",
     },
   ],
